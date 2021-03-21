@@ -11,6 +11,7 @@ export default () => {
           limit: 50,
           term: searchTerm,
           location: "Incline Village",
+          categories: "coffee,restaurants",
         },
       });
       setResults(response.data.businesses);
@@ -19,9 +20,9 @@ export default () => {
       setErrorMessage("something went wrong: " + error);
     }
   };
-  useEffect(() => {
-    searchApi("pasta");
-  }, []);
+  // useEffect(() => {
+  //   searchApi("pasta");
+  // }, []);
 
   return [errorMessage, results, searchApi];
 };
